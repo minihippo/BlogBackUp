@@ -2,6 +2,7 @@
 title: git使用指南
 date: 2017-09-18 21:44:38
 tags:
+     - 教程
      - 备份
      - git
 reward: true
