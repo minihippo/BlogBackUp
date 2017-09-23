@@ -188,7 +188,7 @@ $ git config --list
 2.`subtree add`初始化
    ~~~shell
    $ cd blog
-   $ git subtree add --prefix=themes/yilia https://github.com/litten/hexo-theme-yilia.git origin/master
+   $ git subtree add --prefix=themes/yilia https://github.com/litten/hexo-theme-yilia.git master
    ~~~
 
 3.`subtree push`提交子项目更改
@@ -204,4 +204,6 @@ $ git config --list
 <p>
 ### Reference
 [官网手册]https://git-scm.com/docs
-[国内教程]http://www.runoob.com/git/git-commit-history.html   
+[国内教程]http://www.runoob.com/git/git-commit-history.html  
+
+Updating . . . 
