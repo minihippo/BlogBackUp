@@ -98,7 +98,8 @@ $ git config --list
 
 3.`push`提交内容
    ```shell
-   $ git push -u origin master
+   $ git push -u origin master  //远程主机名 分支名
+   $ git push -u origin branchname:branchname
    ```
 
 4.`remote`查看当前远程库
