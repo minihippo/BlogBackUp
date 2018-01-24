@@ -13,7 +13,7 @@
 	font-size: 1.75rem;
 	line-height: 1.25;
 	margin-top: 2em;
-	margin-bottom: 1em;
+	margin-bottom: 0.53571429em;
 }
 
 .article-inner h2 {
@@ -21,7 +21,7 @@
 	font-size: 1.4375rem;
 	line-height: 1.2173913043;
 	margin-top: 2.4347826087em;
-	margin-bottom: 1.2173913043em;
+	margin-bottom: 0.65217391em;
 }
 
 .article-inner h3 {
@@ -29,7 +29,7 @@
 	font-size: 1.1875rem;
 	line-height: 1.1052631579;
 	margin-top: 2.9473684211em;
-	margin-bottom: 1.4736842105em;
+	margin-bottom: 0.78947368em;
 }
 
 .article-inner h4,
@@ -39,13 +39,13 @@
 	font-size: 1rem;
 	line-height: 1.3125;
 	margin-top: 3.5em;
-	margin-bottom: 1.75em;
+	margin-bottom: 0.9375em;
 }
 
-.article-inner h4 {
-	letter-spacing: 0.140625em;
-	text-transform: uppercase;
-}
+//.article-inner h4 {
+//	letter-spacing: 0.140625em;
+//	text-transform: uppercase;
+//}
 
 .article-inner h6 {
 	font-style: italic;
@@ -128,7 +128,7 @@
   }
   ul,ol{
     font-size: 14px;
-    margin: 10px 0px;  
+    margin: 10px 0px;
   }
   li{
     ul,ol{
@@ -147,7 +147,7 @@
     font-weight: bold;
     color: #574C4C;
     padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
+    //border-bottom: 1px solid #ddd;
   }
   h3,h4,h5,h6{
     margin-top: 20px;
