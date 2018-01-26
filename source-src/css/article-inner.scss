@@ -67,6 +67,46 @@
 	font-weight: 600;
 }
 
+.article-inner ul,
+.article-inner ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.article-inner ul {
+  list-style-type: disc;
+}
+
+.article-inner ol {
+  list-style-type: decimal;
+}
+
+.article-inner ul ul,
+.article-inner ul ol,
+.article-inner ol ol,
+.article-inner ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.article-inner ol ol,
+.article-inner ul ol {
+  list-style-type: lower-roman;
+}
+
+.article-inner ol ul,
+.article-inner ul ul {
+  list-style-type: circle;
+}
+
+.article-inner ul ul ol,
+.article-inner ul ol ol,
+.article-inner ol ul ol,
+.article-inner ol ol ol {
+  list-style-type: lower-alpha;
+}
+
 .article-entry h1:first-child,
 .article-entry h2:first-child,
 .article-entry h3:first-child,
@@ -111,46 +151,55 @@
   em {
     font-style: italic;
   }
-  ul {
-    li:before{
-      content: "";
-      width: 6px;
-      height: 6px;
-      border: 1px solid #999;
-      border-radius: 10px;
-      background: #aaa;
-      display: inline-block;
-      margin-right: 10px;
-      float: left;
-      margin-top: 10px;
-    }
-  }
-  ol {
-    counter-reset: item;
-    li:before{
-      counter-increment: item;
-	    content: counter(item)".";
-      margin-right: 10px;
-    }
-  }
+  //ul {
+  //  li:before{
+  //    content: "";
+  //    width: 6px;
+  //    height: 6px;
+  //    border: 1px solid #999;
+  //    border-radius: 10px;
+  //    background: #aaa;
+  //    display: inline-block;
+  //    margin-right: 10px;
+  //    float: left;
+  //    margin-top: 10px;
+  //  }
+  //}
+  //ol {
+  //  counter-reset: item;
+  //  li:before{
+  //    counter-increment: item;
+	//    content: counter(item)".";
+  //    margin-right: 10px;
+  //  }
+  //}
   ul,ol{
     font-size: 16px;
-    margin: 10px 0px;
+    margin: 0px 0px 16px 0px;
+    padding-left: 2rem;
   }
-  li{
-    //padding-left: 2em;
-    ul,ol{
-      //margin-left: 30px;
-      li:before{
-        content: "";
-        background: #dedede;
-      }
-    }
+  li {
+    word-wrap: break-word;
   }
+  //li>p {
+  //  margin-top: 16px;
+  //}
+  li+li {
+    margin-top: 0.25em;
+  }
+  //li{
+  //  padding-left: 2em;
+  //  ul,ol{
+  //    margin-left: 30px;
+  //    li:before{
+  //      content: "";
+  //      background: #dedede;
+  //    }
+  //  }
+  //}
   h1{
     margin-top: 30px;
     border-bottom: 1px solid #ddd;
-    //display: block;
   }
   h2{
     margin-top: 24px;
