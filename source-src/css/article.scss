@@ -181,12 +181,16 @@
     margin: 0px 0px 16px 0px;
     padding-left: 2rem;
   }
+  ul li input {
+    margin: 0 .2em .25em -1.6em;
+    vertical-align: middle;
+  }
   li {
     word-wrap: break-word;
   }
-  li>p {
-    margin-top: 16px;
-  }
+  //li>p {
+  //  margin-top: 16px;
+  //}
   li+li {
     margin-top: 0.25em;
   }
