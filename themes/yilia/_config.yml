@@ -2,14 +2,18 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
+  笔记: /tags/notes/
+  周记: /tags/周记/
+  杂谈: /tags/杂谈/
+  备份: /tags/备份/
+
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  github: "https://github.com/minihippo"
+  weibo: "http://weibo.com/miaotiaoxiaohema"
+  #rss: "#"
+  zhihu: "https://www.zhihu.com/people/geng-xiao-yi-78"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -17,7 +21,7 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "mailto:gengxiaoyu1996@gmail.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -28,28 +32,28 @@ rss: /atom.xml
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root:
+root: 
 
 # Content
 
 # 文章太长，截断按钮文字
 excerpt_link: more
 # 文章卡片右下角常驻链接，不需要请设置为false
-show_all_link: '展开全文'
+show_all_link: false
 # 数学公式
-mathjax: false
+mathjax: true
 # 是否在新窗口打开链接
 open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 1
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay:
+alipay: /assets/img/alipay.jpg
 # 微信二维码图片地址
-weixin:
+weixin: 
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
@@ -68,7 +72,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar:
+avatar: /assets/img/img.png
 
 #是否开启分享
 share_jia: true
@@ -91,7 +95,7 @@ changyan_conf: false
 disqus: false
 
 #5、Gitment
-gitment_owner: false      #你的 GitHub ID
+gitment_owner: gengxiaoyu1996@gmail.com      #你的 GitHub ID
 gitment_repo: ''          #存储评论的 repo
 gitment_oauth:
   client_id: ''           #client ID
@@ -116,15 +120,15 @@ slider:
 #  friends: false
 smart_menu:
   innerArchive: '所有文章'
-  friends: '友链'
+  friends: false   #'友链'
   aboutme: '关于我'
 
-friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+# friends:
+#   友情链接1: http://localhost:4000/
+#   友情链接2: http://localhost:4000/
+#   友情链接3: http://localhost:4000/
+#   友情链接4: http://localhost:4000/
+#   友情链接5: http://localhost:4000/
+#   友情链接6: http://localhost:4000/
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: 小河马，<br>研究生在读<br>NJUer  PASAer<br>被机器学习碾压的渣渣，喜欢搞数学的大大<br><br>热爱生活，爱吃爱睡爱coding<br>人生最大的愿望就是早日瘦到120斤
