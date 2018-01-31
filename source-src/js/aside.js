@@ -1,4 +1,4 @@
-var backTop = function (domE, ctn, distance) {
+ var backTop = function (domE, ctn, distance) {
     if (!domE) return;
     var timer = null;
     var _onscroll = window.onscroll,
