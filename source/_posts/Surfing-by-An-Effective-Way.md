@@ -90,13 +90,11 @@ ss-local执行类似SOCKS5服务端的操作，给client提供代理。它加密
 - Google Chrome
 
   安装插件SwitchyOmega，现在貌似升级到了SwitchSharp。
-
   设置socks 5 代理，地址为本机地址“localhost”，端口为本地端口。
 
 - Firefox
 
   不需要安装插件，直接设置就好。
-
   配置方式如上，但需勾上远程DNS
 
 ### Mac OS Sierra 搭建ss
@@ -116,7 +114,6 @@ ss-local执行类似SOCKS5服务端的操作，给client提供代理。它加密
 1. DNS污染
 
    　　网址转换成ip需要DNS服务器去解析，GFW要求国内运营商DNS服务器拦截某些网址，然后群众的策略是把DNS服务器地址改成google的8.8.8.8。因为DNS协议是无安全较验的协议。所以当用户访问了GFW想拦截的域名，那么它会返回一个伪造的ip，而后来的google服务器返回真实的ip包会被丢弃。
-
    　　最简单有效的方法。
 
 2. ip封锁

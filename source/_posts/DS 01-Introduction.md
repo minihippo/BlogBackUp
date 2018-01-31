@@ -1,15 +1,18 @@
 ---
-title: DistributedSystem_Introduction
+title: DS 01-Introduction
 date: 2017-09-27 20:26:20
 tags: 
      - 分布式系统
      - 笔记
+     - notes
+     - DistributedSystem
 toc: true
 reward: true
+encrypt: true
 ---
 # 1.Introduction
 
-### 1.1 Definition
+## 1.1 Definition
 
 *Distributed System*: a collection of autonomous computing elements that appears to users as a single coherent system.
 
@@ -22,10 +25,9 @@ reward: true
   * Continuously avaliable
 
 *As Middleware*:
+<img src="/DS/middleware.png", style="zoom:50%" />
 
-![middleware](/pic/middleware.png)
-
-### 1.2 Goals
+## 1.2 Goals
 
 **resources available, transparency, openness, scalablility**
 
@@ -65,7 +67,7 @@ Users get resources conveniently.
 * Geographical scalability: maxinum distance between nodes
 * Administrative scalability: easy to manage number of administrative domains
 
-### 1.3 Types of Distributed Systems
+## 1.3 Types of Distributed Systems
 
 Distributed  computing systems, distributed information systems, distributed pervasive systems.
 

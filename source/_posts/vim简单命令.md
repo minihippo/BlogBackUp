@@ -8,5 +8,5 @@ tags:
 reward: true
 ---
 *MindNode*
-![vim简单命令](/picture/vim简单命令.png)
+<img src="/picture/vim简单命令.png" style="zoom:50%" />
 

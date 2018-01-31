@@ -8,7 +8,7 @@ tags:
 toc: true
 reward: true
 ---
-<p>
+
 ### 安装配置
 
 *precondition*: nodejs ——生成静态页面
@@ -19,7 +19,7 @@ reward: true
    ~~~
   
 <!--more-->
-<p>
+
 ### 建站
 
 1.初始化
@@ -50,7 +50,6 @@ reward: true
      | description |             |
      | author      |             |
 
-<p>
 ### 部署
 
 1.安装hexo-deployer-git，提交远程仓库
@@ -77,7 +76,6 @@ reward: true
    $ hexo deploy/d
    ~~~
 
-<p>
 ### 写作
 
 1.新建文章
@@ -138,7 +136,6 @@ reward: true
    skip_render: README.md
    ~~~
 
-<p>
 ### 主题
 
 1.安装主题yilia
@@ -161,7 +158,6 @@ reward: true
    $ git subtree pull --prefix=themes/yilia origin master //update
    ~~~
 
-<p>
 ### Plug-in
 
 1.某篇文档加密
@@ -207,7 +203,7 @@ reward: true
            categories: false
            tags: true
      ~~~
-<p>
+
 ### Reference
 
 - [hexo Documentation](https://hexo.io/docs/)

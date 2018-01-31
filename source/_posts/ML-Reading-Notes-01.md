@@ -15,7 +15,7 @@ reward: true
 
 <img src="/ML-ReadingNotes/1-1.png" style="zoom:40%" />
 
-# Learning Map
+## Learning Map
 
 overview
 
@@ -34,23 +34,23 @@ overview
 
 ### Supervised Learning
 
-##### 1. Regression
+#### 1. Regression
 
 the output of target function $f$ is scalar.
 
-##### 2. classification
+#### 2. classification
 
 binary classification: the output of target function $f$ is yes/no.   
 Multi-class classification: the ouput of target function $f$ is classification
 
-1&2 method: linear model and Non-linear Model, deep learning is one of non-linear model for complicated problems.
+**1&2 method**: linear model and Non-linear Model, deep learning is one of non-linear model for complicated problems.
 
-##### 3. Structured Learning
+#### 3. Structured Learning
 
 the output of target function $f$ is structured data.  
 比如，根据一段语音得到对应文本。
 
-#### Semi-Supervised Learning & Transfer Learning 
+### Semi-Supervised Learning & Transfer Learning 
 
 both labelled and unlabelled data, semi-supervised data is related to the task considered.   
 For example, recognizing cat and dogs, transfer learning:  

@@ -8,8 +8,9 @@ tags:
      - notes
 toc: true
 reward: true
+encrypt: true
 ---
-## 2. Architectures
+# 2. Architectures
 
 *Terminology*:
 
@@ -20,7 +21,7 @@ reward: true
 
 Architecture style is formulated in terms of components, the way that components are connected to each other, the data exchanged between components. 
 
-### 2.1 Architecture Styles
+## 2.1 Architecture Styles
 
 *Divided into*:$^1$ layered architecture, $^2$objected-based architecture, $^3$data-centered architecture, $^4$event-based architecture.
 
@@ -50,13 +51,13 @@ Architecture style is formulated in terms of components, the way that components
 
   <img src="/picture/DS/event-based.png" width="300" />
 
-### 2.2 System Architecture 
+## 2.2 System Architecture 
 
 *Definition*: an **instance** of a software architecture which realizes $^1$the ~~logical~~ software component, $^2$their ~~logical~~ interaction, and $^3$their physical placement.
 
 *Types*: centralized architectures, decentralized architectures, hybrid architecture.
 
-#### 2.2.1 Centralized Architecture
+### 2.2.1 Centralized Architecture
 
 Basic Client-Server Model: a single server(physical) implements most of the software components while remote clients can access that server.
 
@@ -74,7 +75,7 @@ Basic Client-Server Model: a single server(physical) implements most of the soft
 * proxy server: as an intermediate node betwwen servers and clients
 * applets: clients download applet from servers, and check on local system
 
-##### 2.2.1.1 Application Layering
+#### 2.2.1.1 Application Layering
 
 *Traditional three-layered view:*
 
@@ -90,7 +91,7 @@ For instance, internet search engine.
 
 In general, it is possible to distribute c/s model into multi physical machines.
 
-##### 2.2.1.2 Multitiered Architectures
+#### 2.2.1.2 Multitiered Architectures
 
 Pre: single-tiered: dumb terminal/mainframe, dumb client do nothing.
 
@@ -102,7 +103,7 @@ Three-tiered: each layer on separate machine. As 2.2.2.1 mentioned, application 
 
 In a word, all the mentioned above is belong to vertical distribution, different layers distributed on different machines.
 
-#### 2.2.2 Decentralized Architecture
+### 2.2.2 Decentralized Architecture
 
 A logical server may be physically split up into logically equivalent parts(balancing the load). 
 
@@ -113,19 +114,19 @@ peer to peer system:
 * *Types divided by overlay network style*: structured, unstructured. 
 * Data is routed over connections setup between the nodes.
 
-##### 2.2.2.1 Structured Peer-Peer
+#### 2.2.2.1 Structured Peer-Peer
 
 *Organization:* nodes are organized following a specific distributed data structure/topology. The protocol ensures any node can search the network for a resource.
 
 *Examples*: chord system, the nodes in a structured overlay network such as a logical ring (created by Distributed Hash Table DHT) and make specific nodes responsible for services based only on their ID. 
 
-##### 2.2.2.2 Unstructured Peer-Peer
+#### 2.2.2.2 Unstructured Peer-Peer
 
 *Organization*：nodes are organized as a random overlay ntework. Each node maintains a list of neighbors which are randomly chosen live node from the current set of nodes.
 
 Flooding: node u sends a lookup query to all of its neighbors.
 
-##### 2.2.2.3 Superpeers
+#### 2.2.2.3 Superpeers
 
 An expansion of peer-to-peer system.
 
@@ -137,7 +138,7 @@ An expansion of peer-to-peer system.
 
 <img src="/picture/DS/superpeers.png" width="300" />
 
-#### 2.3 Hybrid System Architecture
+## 2.3 Hybrid System Architecture
 
 Client-server combined with P2P
 

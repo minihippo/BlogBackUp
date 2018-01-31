@@ -10,7 +10,7 @@ toc: true
 ---
 ## 基本概念
 
-![git结构](/picture/git结构.png)
+<img src="/picture/git结构.png"], style="zoom:50%" />
 
 <!--more-->
 
@@ -26,7 +26,6 @@ for mac: user.name *minihippo*
          user.email *gengxiaoyu1996@gmail.com*
 
 * 查看配置信息
-
 ```shell
 $ git config --list
 ```
@@ -142,6 +141,7 @@ $ git config --list
    ```shell
    $ git checkout branchname
    $ git checkout -b branchname  //创建新分支并切换到当前目录下
+   $ git checkout -b branchname origin/branch  //创建远程分支到本地分支ß
    ```
 
 5. `merge`合并分支
@@ -230,6 +230,7 @@ $ git config --list
    $ git diff --cached  //已缓存的改动
    $ git diff HEAD  //查看所有改动
    ```
+
 #### 标签
 
 `tag`,`tag -d`,`show`,`log`
