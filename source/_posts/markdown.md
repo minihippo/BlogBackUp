@@ -8,13 +8,12 @@ tags:
 toc: true
 reward: true
 ---
-<p>
+
 ## Overview
-![markdown语法](/picture/markdown语法.png)
+<img src="/picture/markdown语法.png", style="zoom:50%">
 
 <!--more-->
 
-<p>
 ## Headers
 ```shell
 # This is an H1  
@@ -22,7 +21,7 @@ reward: true
 ### This is an H3
 #### This is an H4
 ##### This is an H5
-###### This is an H6  
+###### This is an H6 
 ```
 # This is an H1
 ## This is an H2
@@ -31,62 +30,91 @@ reward: true
 ##### This is an H5
 ###### This is an H6
 
-<p>
+test over...
+
 ## Lists
-##### Unordered  
+#### Unordered  
 ```shell
 * 1
 * 2
+- 1
+- 2
++ 1
++ 2
 ```
+the normal size 1
 * 1
-* 2  
+  the normal size
+* 2 
+- 1
+- 2
++ 1
++ 2 
 
-##### Ordered
+#### Ordered
 ```shell
 1. 1
+   * unordered sub-list
 2. 2
-```
-1. 1
-2. 2
+   1. ordered sublist
+3. 3
+   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-##### Assignment
+   To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
+   Note that this line is separate, but within the same paragraph.⋅⋅
+   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+```
+
+the normal size
+1. 1
+  the normal size
+  - unordered sub-list
+  - iiiii
+2. 2
+   1. ordered sublist
+3. 3
+   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+
+   To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
+   Note that this line is separate, but within the same paragraph.⋅⋅
+   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+
+#### Assignment
 ```shell
 - [ ] eat
 - [x] sleep
 ```
 - [ ] eat
+   - [ ] test1
+   - [ ] test2
 - [x] sleep
 
-<p>
 ## Blockquotes
-##### Contents
+#### Contents
 ```shell
 > For example
 ```
 > For example  
 
-<p>
-##### Page Links
+#### Page Links
 ```shell
 [baidu](http://www.baidu.com)
 ```
 [baidu](http://www.baidu.com)
 
-##### Picture Links
+#### Picture Links
 ```shell
 ![title](path)
 ```
-  
-  
-<p>
+
 ## Code Blocks
-##### Single Line
+#### Single Line
 ```shell
 `code`
 ```
 `code`
 
-##### Block
+#### Block
 ```java
 \`\`\`java
 //test
@@ -98,40 +126,39 @@ int a = 5
 int a = 5
 ```
 
-<p>
 ## Font
-##### Blod
+#### Blod
 ```shell
 **blod**
 ```
 **blod**
 
-##### Italic
+#### Italic
 ```shell
 *italic*
 ```
 *italic*
 
-##### Underline
+#### Underline
 ```shell
 <u>underline</u>
 ```
 <u>underline</u>
 
-##### Horizontal Rules
+#### Horizontal Rules
 ```shell
 *****
 ____
 ```
 ***************
 
-##### Line-through
+#### Line-through
 ```shell
 ~~line-through~~
 ```
 ~~line-through~~
 
-##### Backslash Escapes
+#### Backslash Escapes
 ```shell
 \*bacslash escape\*
 ```
@@ -149,22 +176,21 @@ ____
 | ----- | ----- | ----- |
 | 1     | 2     | 3     |
 | 1     | 2     | 3     |
-
-<p>
+  
 ## Peference
-##### Mathematical Expression
+#### Mathematical Expression
 ```shell
 $ lim_{x \to \infty}\exp(-x) = 0$
 ```
 $ lim_{x \to \infty}\exp(-x) = 0$
 
-##### Superscript
+#### Superscript
 ```shell
 y^2^ = 4
 ```
 y^2^ = 4
 
-##### Subscript
+#### Subscript
 ```shell
 H~2~O
 ```
