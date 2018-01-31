@@ -1,4 +1,5 @@
 # hexo-theme-yilia
+原项目见[yilia](https://github.com/litten/hexo-theme-yilia)
 
 ## b-minihippo分支说明
 #### markdown解析样式
