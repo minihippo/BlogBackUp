@@ -3,6 +3,8 @@ title: blog backup
 date: 2018-05-31 22:17:45
 tags:
 	- 备份
+	- hexo
+    - git	
 ---
 
 ### Motivation
