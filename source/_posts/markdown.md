@@ -116,10 +116,10 @@ the normal size
 
 #### Block
 ```java
-\`\`\`java
+```java
 //test
 int a = 5
-\`\`\`
+``\`
 ```
 ```java
 //test
