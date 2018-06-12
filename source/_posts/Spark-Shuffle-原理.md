@@ -2,9 +2,9 @@
 title: Spark Shuffle 原理
 date: 2018-06-05 20:11:19
 tags: 
-    - spark
+    - Spark
     - 小记
-    - shuffle
+    - Shuffle
 toc: true
 ---
 
