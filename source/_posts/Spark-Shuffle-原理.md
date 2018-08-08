@@ -16,7 +16,7 @@ Shuffle阶段涉及序列化反序列化、跨节点网络IO以及磁盘读写IO
 
 ## Spark Shuffle 实现演进
 
-#### Hash Shuffle
+### Hash Shuffle
 1.1版本以前实现方式，2.0版本已淘汰
 更早版本的Hash Shuffle 每个map task都会为每个partition写一个文件。假设有n个partition，一个executor上有m个map task，那么就会有n\*m个文件。生成文件时需要申请文件描述符，当partition很多时，并行化运行task时可能会耗尽文件描述符、消耗大量内存。因此后来Hash Shuffle进一步变成了如下版本。
 ![](/picture/shuffle-hash.png)
@@ -29,12 +29,24 @@ Shuffle阶段涉及序列化反序列化、跨节点网络IO以及磁盘读写IO
 - 在reduce阶段，reduce task拉取数据做combine时不再使用`HashMap`而是`ExternalAppendOnlyMap`。如果内存不足会写次磁盘。
 排序会导致性能损失。
 
-**Unsafe Shuffle**
-为了进一步的优化内存和CPU使用，提升spark性能，引入了Unsafe Shuffle。
-将中间结果以二进制的方式存储，直接在序列化的二进制数据上排序而不是java对象。排序的不是内容本身，而是内容序列化后字节数组的指针(元数据)，把数据的排序转变为了指针数组的排序，实现了直接对序列化后的二进制数据进行排序。既减少了内存使用和GC开销，也避免了频繁的序列化很反序列化。
-限制：shuffle阶段不能有aggregate操作，分区数不超过$2^{24} \- 1$
+#### Unsafe Shuffle (Tungsten-sort)
+为了进一步的优化内存和CPU使用，提升spark性能，引入了Unsafe Shuffle。设计了一套新的内存管理机制，类似操作系统的page table结构对内存进行管理。将中间结果以二进制的方式存储到堆外内存，直接在序列化的二进制数据上排序而不是java对象。排序的不是内容本身，而是内容序列化后字节数组的指针(元数据)，把数据的排序转变为了指针数组的排序，实现了直接对序列化后的二进制数据进行排序。既减少了内存使用和GC开销，也避免了频繁的序列化很反序列化。
+![](/picture/shuffle-unsafe.png)
+1. `Unsafe Shuffle`使用了堆外内存，支持off-heap和in-heap模式
+ - 在off-heap模式，内存通过一个64bits的绝对内存地址表示。obj为null，offset则为绝对的内存地址
+ - 在in-heap模式，内存由相对于一个JVM对象的偏移表示。obj则是JVM对象的基地址，offset则是相对于改对象基地址的偏移
+2. #page为13bit，Offset为51bit
+3. Offset == 24bit分区号 + 13bit page号 + 27bit page内偏移量，$2^{13} \* 128M = 1TB$
+4. 24bit分区号就是为了进行分区排序，key没别编码进去因此不能排序
+5. 整个过程没有反序列化 
+6. 其他部分和SortShuffle没有什么区别，步骤都是类似的
+限制：shuffle阶段不能有aggregate操作；输出不能需要排序；分区数不超过$2^{24} \- 1$；序列化后单条记录不能超过128M(一个page的大小)；序列化器需要是KryoSerializer等
 
 Sort Shuffle包括Unsafe Shuffle，当条件符合就优先使用Unsafe Shuffle。
+
+#### ByPassMergeSort Shuffle
+借鉴了Hash Shuffle的思想，对于分区少于200（参数`spark.shuffle.sort.bypassMergeThreshold`默认设置）且不需要聚合排序的算子，优先使用这种策略。但是和Hash Shuffle不一样的是，一个maptask虽然会为每个partition生成一个文件，但是在task最终还是会把它们合并成一个数据文件+一个索引文件。
+优势：避免了排序
 
 ## Shuffle详细实现流程
 针对SortShuffle的实现，具体解释整个实现流程。
@@ -49,7 +61,7 @@ Shuffle Write 主要分为三个阶段：
 如果当前使用内存超过5M（`spark.shuffle.spill.initalMemoryThreshold`设置大小，默认5M，主要是防止spill的文件过小），map task会向`shuffleMemoryManager`申请`2 * currentMemory - myMemoryThreshold`大小的内存，如果申请不到就会触发spill操作。
 `shuffleMemoryManager`是executor上所有task共享的， 并行task共享executor的内存，executor能分配出去的内存是`executorHeapMemory * spark.shuffle.memoryFraction * spark.shuffle.safetyFraction`。由于内存检查`estimateSize`是使用采样算法来进行估算的，采样周期不固定，呈指数增长。因此内存开的越大反而容易OOM，可以适当调低`spark.shuffle.safetyFraction`参数。
 
-因此spark内存使用是很激进的，如果中间结果内存放得下会放进内存，会不会写磁盘做容错？
+因此spark内存使用是很激进的，如果中间结果内存放得下会放进内存，在task最后将中间结果写入磁盘。
 
 ### Shuffle Read
 
@@ -57,4 +69,6 @@ Shuffle Write 主要分为三个阶段：
 
 ### Reference
 Spark Shuffle的演变，[Spark Shuffle原理及相关调优](http://sharkdtu.com/posts/spark-shuffle.html)
-[Unsafe Shuffle实现流程](http://www.cnblogs.com/dt-zhw/p/5734921.html)
+[Spark Shuffle的技术演进](https://www.jianshu.com/p/4c5c2e535da5)
+[Spark Tungsten-sort Based Shuffle 分析](https://www.jianshu.com/p/d328c96aebfd)
+[探索Spark Tungsten的秘密](https://github.com/hustnn/TungstenSecret/tree/master)

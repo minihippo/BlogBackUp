@@ -134,7 +134,8 @@ $ git config --list
 
    ```shell
    $ git branch
-   ```
+   $ git branch -r   //显示远程分支 
+  ```
 
 4. `checkout`切换分支
 
@@ -176,6 +177,7 @@ $ git config --list
 2. `reset` 撤销对缓存区的修改，取消add。 //用master指向的目录替换缓存区目录文件
    ~~~shell
    $ git reset HEAD /file
+   $ git reset --merge  //撤销merge
    ~~~
 
 3. `rm`移除缓存区内容
